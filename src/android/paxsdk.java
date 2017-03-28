@@ -107,21 +107,21 @@ public class paxsdk extends CordovaPlugin {
     PaymentRequest paymentRequest = new PaymentRequest();
     CommSetting commSetting = new CommSetting();
 
-    commSetting.TimeOut = actiontimeout;
+    commSetting.setTimeOut(actiontimeout);
     if (!"".equals(destPort)) {
-      commSetting.DestPort = destPort.trim();
+      commSetting.setDestPort(destPort.trim());
     }
     if (!"".equals(destIP)) {
-      commSetting.DestIP = destIP.trim();
+      commSetting.setDestIP(destIP.trim());
     }
     if (!"".equals(serialPort)) {
-      commSetting.SerialPort = serialPort.trim();
+      commSetting.setSerialPort(serialPort.trim());
     }
     if (!"".equals(commType)) {
-      commSetting.CommType = commType.trim();
+      commSetting.setCommType(commType.trim());
     }
     if (!"".equals(baudRate)) {
-      commSetting.BaudRate = baudRate.trim();
+      commSetting.setBaudRate(baudRate.trim());
     }
 
     paymentRequest.TenderType = paymentRequest.ParseTenderType(tenderType);
@@ -157,21 +157,21 @@ public class paxsdk extends CordovaPlugin {
     BatchRequest batchRequest = new BatchRequest();
     CommSetting commSetting = new CommSetting();
 
-    commSetting.TimeOut = actiontimeout;
+    commSetting.setTimeOut(actiontimeout);
     if (!"".equals(destPort)) {
-      commSetting.DestPort = destPort.trim();
+      commSetting.setDestPort(destPort.trim());
     }
     if (!"".equals(destIP)) {
-      commSetting.DestIP = destIP.trim();
+      commSetting.setDestIP(destIP.trim());
     }
     if (!"".equals(serialPort)) {
-      commSetting.SerialPort = serialPort.trim();
+      commSetting.setSerialPort(serialPort.trim());
     }
     if (!"".equals(commType)) {
-      commSetting.CommType = commType.trim();
+      commSetting.setCommType(commType.trim());
     }
     if (!"".equals(baudRate)) {
-      commSetting.BaudRate = baudRate.trim();
+      commSetting.setBaudRate(baudRate.trim());
     }
 
     batchRequest.EDCType = batchRequest.ParseEDCType(edcType);
