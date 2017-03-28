@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.mrboss.paxsdk"
+      version="0.0.1">
+
+    <name>Android paxsdk</name>
+    <description>Cordova Android paxsdk Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,android,paxsdk</keywords>
+    <repo>https://github.com/Bossierp/com.mrboss.paxsdk.git</repo>
+    <issue>https://github.com/Bossierp/com.mrboss.paxsdk/issues</issue>
+
+    <js-module src="www/paxsdk.js" name="paxsdk">
+        <merges target="cordova.paxsdk" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="paxsdk">
+                <param name="android-package" value="com.mrboss.paxsdk.paxsdk"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/caiosdevice_dex.jar" target-dir="libs" />
+        <source-file src="src/android/casioregdevicelibrary_dex.jar" target-dir="libs" />
+        <source-file src="src/android/Commonlib_20150420_dex.jar" target-dir="libs" />
+        <source-file src="src/android/POSLink_20161230.jar" target-dir="libs" />
+        <source-file src="src/android/gson-2.6.2.jar" target-dir="libs" />
+
+        <source-file src="src/android/paxsdk.java" target-dir="src/com/mrboss/paxsdk" />
+    </platform>
+
+</plugin>
