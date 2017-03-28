@@ -27,7 +27,6 @@
         <source-file src="src/android/casioregdevicelibrary_dex.jar" target-dir="libs" />
         <source-file src="src/android/Commonlib_20150420_dex.jar" target-dir="libs" />
         <source-file src="src/android/POSLink_20161230.jar" target-dir="libs" />
-        <source-file src="src/android/gson-2.6.2.jar" target-dir="libs" />
 
         <source-file src="src/android/paxsdk.java" target-dir="src/com/mrboss/paxsdk" />
     </platform>
