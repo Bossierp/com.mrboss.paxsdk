@@ -118,7 +118,7 @@ public class paxsdk extends CordovaPlugin {
       commSetting.setSerialPort(serialPort.trim());
     }
     if (!"".equals(commType)) {
-      commSetting.setCommType(commType.trim());
+      commSetting.setType(commType.trim());
     }
     if (!"".equals(baudRate)) {
       commSetting.setBaudRate(baudRate.trim());
@@ -168,7 +168,7 @@ public class paxsdk extends CordovaPlugin {
       commSetting.setSerialPort(serialPort.trim());
     }
     if (!"".equals(commType)) {
-      commSetting.setCommType(commType.trim());
+      commSetting.setType(commType.trim());
     }
     if (!"".equals(baudRate)) {
       commSetting.setBaudRate(baudRate.trim());
