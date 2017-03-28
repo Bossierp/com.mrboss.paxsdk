@@ -49,7 +49,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-import com.pax.poslink;
+import com.pax.poslink.*;
 import com.pax.poslink.ProcessTransResult.ProcessTransResultCode;
 
 import com.google.gson.Gson;
@@ -109,24 +109,24 @@ public class paxsdk extends CordovaPlugin {
 
     commSetting.TimeOut = actiontimeout;
     if (!"".equals(destPort)) {
-      commSetting.DestPort = destPort.Trim();
+      commSetting.DestPort = destPort.trim();
     }
     if (!"".equals(destIP)) {
-      commSetting.DestIP = destIP.Trim();
+      commSetting.DestIP = destIP.trim();
     }
     if (!"".equals(serialPort)) {
-      commSetting.SerialPort = serialPort.Trim();
+      commSetting.SerialPort = serialPort.trim();
     }
     if (!"".equals(commType)) {
-      commSetting.CommType = commType.Trim();
+      commSetting.CommType = commType.trim();
     }
     if (!"".equals(baudRate)) {
-      commSetting.BaudRate = baudRate.Trim();
+      commSetting.BaudRate = baudRate.trim();
     }
 
     paymentRequest.TenderType = paymentRequest.ParseTenderType(tenderType);
     paymentRequest.TransType = paymentRequest.ParseTransType(transType);
-    paymentRequest.Amount = (amount * 100).ToString();
+    paymentRequest.Amount = String.valueOf(amount * 100);
     paymentRequest.ECRRefNum = outTradeNo;
     paymentRequest.InvNum = outTradeNo;
 
@@ -159,19 +159,19 @@ public class paxsdk extends CordovaPlugin {
 
     commSetting.TimeOut = actiontimeout;
     if (!"".equals(destPort)) {
-      commSetting.DestPort = destPort.Trim();
+      commSetting.DestPort = destPort.trim();
     }
     if (!"".equals(destIP)) {
-      commSetting.DestIP = destIP.Trim();
+      commSetting.DestIP = destIP.trim();
     }
     if (!"".equals(serialPort)) {
-      commSetting.SerialPort = serialPort.Trim();
+      commSetting.SerialPort = serialPort.trim();
     }
     if (!"".equals(commType)) {
-      commSetting.CommType = commType.Trim();
+      commSetting.CommType = commType.trim();
     }
     if (!"".equals(baudRate)) {
-      commSetting.BaudRate = baudRate.Trim();
+      commSetting.BaudRate = baudRate.trim();
     }
 
     batchRequest.EDCType = batchRequest.ParseEDCType(edcType);
@@ -215,7 +215,7 @@ public class paxsdk extends CordovaPlugin {
     return res;
   }
 
-  private String ToJsonStr(object obj) {
+  private String ToJsonStr(Object obj) {
     Gson gson = new Gson();
     String jsondate = gson.toJson(obj);
     return jsondate;
