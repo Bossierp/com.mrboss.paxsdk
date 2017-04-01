@@ -100,8 +100,9 @@ public class paxsdk extends CordovaPlugin {
   }
 
   public String POSLinkPaymentMethod(String tenderType, String transType, String shopid, String totalMoneys, String destPort, String destIP, String serialPort, String commType, String baudRate) throws InterruptedException {
+    poslink = new PosLink();
     String result = "";
-    double amount = Math.round(Double.parseDouble(totalMoneys) * 100) / 100;
+    double amount = Math.round(Double.parseDouble(totalMoneys) * 100) / 100.0;
     String outTradeNo = GenerateOutTradeNo(Integer.parseInt(shopid));
 
     PaymentRequest paymentRequest = new PaymentRequest();
@@ -126,7 +127,7 @@ public class paxsdk extends CordovaPlugin {
 
     paymentRequest.TenderType = paymentRequest.ParseTenderType(tenderType);
     paymentRequest.TransType = paymentRequest.ParseTransType(transType);
-    paymentRequest.Amount = String.valueOf(amount * 100);
+    paymentRequest.Amount = String.valueOf(Math.round(amount * 100));
     paymentRequest.ECRRefNum = outTradeNo;
     paymentRequest.InvNum = outTradeNo;
 
@@ -152,6 +153,7 @@ public class paxsdk extends CordovaPlugin {
   }
 
   public String POSLinkBatchMethod(String edcType, String transType, String destPort, String destIP, String serialPort, String commType, String baudRate) throws InterruptedException {
+    poslink = new PosLink();
     String result = "";
 
     BatchRequest batchRequest = new BatchRequest();
